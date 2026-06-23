@@ -70,7 +70,12 @@ When the user asks to list pages:
 - Do not invent, copy from memory, or reuse stale SRI hashes for CDN assets.
 - Do not add build tools, local framework installs, dependencies, or package managers unless explicitly requested.
 - New pages must include a light/dark theme toggle. Prefer Bootstrap 5.3+ color modes with `data-bs-theme` on the root `html` element.
+- Light theme must be the default first-load theme. Light means white or near-white background with dark text.
+- Dark theme must use a dark background with light text.
+- Theme CSS must use Bootstrap color-mode variables or explicit `[data-bs-theme="light"]` and `[data-bs-theme="dark"]` selectors so switching themes changes both background and text colors.
 - The theme toggle may use small inline JavaScript to switch `data-bs-theme` and store the selected theme in `localStorage`.
+- If theme state is persisted, use a page-specific `localStorage` key instead of a generic key like `theme`, so old dark-mode choices from another page do not force new pages to start dark.
+- If the stored theme value is missing or invalid, fall back to `light`; only an explicit stored `dark` value may start a page in dark mode.
 - Keep pages easy to read on mobile and desktop.
 - New pages must be responsive. Use Bootstrap containers, grid utilities, spacing utilities, and mobile-first CSS.
 - Use relative links so GitHub Pages works under /HW/.
