@@ -1,35 +1,64 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Homework pages published with GitHub Pages." />
-    <title>Homework Pages</title>
+    <meta
+      name="description"
+      content="Каталог сторінок з домашніми роботами та тестами з англійської."
+    />
+    <title>English Homework Pages</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="page">
-      <section class="intro">
+      <header class="intro">
         <p class="eyebrow">GitHub Pages</p>
-        <h1>Homework pages</h1>
+        <h1>English homework and tests</h1>
         <p class="lead">
-          Choose the page you want to open. Each homework page lives in its own
-          folder, so old work stays available when a new page is added.
+          Каталог простих сторінок з домашніми роботами або тестами з
+          англійської. Кожна робота лежить в окремій папці і відкривається за
+          своїм посиланням.
         </p>
-      </section>
+      </header>
 
-      <section class="links" aria-label="Published pages">
-        <a class="link-card" href="english-homework/">
-          <span class="label">New</span>
-          <strong>English homework</strong>
-          <span>Be used to + -ing</span>
-        </a>
+      <section class="table-section" aria-labelledby="pages-title">
+        <div class="section-heading">
+          <h2 id="pages-title">Сторінки</h2>
+          <span class="counter">2 entries</span>
+        </div>
 
-        <a class="link-card" href="simple-static/">
-          <span class="label">Previous</span>
-          <strong>Simple static page</strong>
-          <span>The earlier GitHub Pages test page</span>
-        </a>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Date created</th>
+                <th scope="col">Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Title">Be used to + -ing</td>
+                <td data-label="Date created">
+                  <time datetime="2026-06-24">2026-06-24</time>
+                </td>
+                <td data-label="Link">
+                  <a href="english-homework/">Open page</a>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Title">Simple static page</td>
+                <td data-label="Date created">
+                  <time datetime="2026-06-24">2026-06-24</time>
+                </td>
+                <td data-label="Link">
+                  <a href="simple-static/">Open page</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
   </body>
