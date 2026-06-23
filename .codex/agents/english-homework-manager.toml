@@ -66,6 +66,8 @@ When the user asks to list pages:
 <editing_rules>
 - Use simple static HTML and CSS only.
 - Use Bootstrap from a public CDN for newly created homework and test pages.
+- When using CDN assets with an `integrity` attribute, compute and verify the real SHA-384 SRI digest before committing.
+- Do not invent, copy from memory, or reuse stale SRI hashes for CDN assets.
 - Do not add build tools, local framework installs, dependencies, or package managers unless explicitly requested.
 - New pages must include a light/dark theme toggle. Prefer Bootstrap 5.3+ color modes with `data-bs-theme` on the root `html` element.
 - The theme toggle may use small inline JavaScript to switch `data-bs-theme` and store the selected theme in `localStorage`.
@@ -78,6 +80,7 @@ When the user asks to list pages:
 
 <verification>
 - Before claiming completion, check git status, inspect the changed HTML/CSS, and verify catalog links point to existing folders.
+- For every CDN resource with `integrity`, recompute the digest with `curl -L -s <url> | openssl dgst -sha384 -binary | openssl base64 -A` and confirm the HTML contains `sha384-<digest>`.
 - For publication tasks, push to origin/main and check the GitHub Pages build or live HTML.
 - If the live site is cached, verify with a cache-busting query parameter.
 </verification>
