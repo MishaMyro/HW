@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Present Perfect test example for English homework pages." />
+    <title>Present Perfect Test Example</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9Oer+R4JWeY60nQxYfktGOuQ1Pd1zYhz+N1meN+M2Dmx"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container py-4 py-md-5">
+      <header class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+        <div>
+          <p class="text-primary fw-semibold text-uppercase small mb-2">Example test</p>
+          <h1 class="display-6 fw-bold mb-2">Present Perfect Test</h1>
+          <p class="text-body-secondary mb-0">
+            Complete the tasks to check how well you understand the Present Perfect tense.
+          </p>
+        </div>
+
+        <button class="btn btn-outline-secondary" type="button" id="themeToggle" aria-pressed="false">
+          Dark theme
+        </button>
+      </header>
+
+      <section class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 card-title">Quick reminder</h2>
+          <p class="card-text mb-3">
+            Use <strong>have / has + past participle</strong> when a past action is connected to the present.
+          </p>
+          <div class="formula rounded border p-3">
+            Subject + have / has + past participle
+          </div>
+        </div>
+      </section>
+
+      <section class="row g-4">
+        <div class="col-12 col-lg-6">
+          <article class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Part 1: Choose the correct answer</h2>
+              <ol class="mb-0">
+                <li class="mb-3">
+                  She <span class="blank">_____</span> her homework already.
+                  <div class="answers">a) finished b) has finished c) have finished</div>
+                </li>
+                <li class="mb-3">
+                  I <span class="blank">_____</span> never been to Canada.
+                  <div class="answers">a) has b) have c) did</div>
+                </li>
+                <li>
+                  They <span class="blank">_____</span> just arrived.
+                  <div class="answers">a) have b) has c) are</div>
+                </li>
+              </ol>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <article class="card h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Part 2: Complete the sentences</h2>
+              <ol class="mb-0">
+                <li class="mb-3">I __________ (lose) my keys.</li>
+                <li class="mb-3">He __________ (not finish) the test yet.</li>
+                <li>We __________ (know) each other for three years.</li>
+              </ol>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-12">
+          <article class="card">
+            <div class="card-body">
+              <h2 class="h5 card-title">Part 3: Write your own answers</h2>
+              <p class="text-body-secondary">
+                Write four true sentences about your life. Use the Present Perfect.
+              </p>
+              <ol class="mb-0">
+                <li class="mb-3">I have ________________________________.</li>
+                <li class="mb-3">I have never __________________________.</li>
+                <li class="mb-3">I have already ________________________.</li>
+                <li>I have not _____________________ yet.</li>
+              </ol>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const root = document.documentElement;
+      const button = document.getElementById("themeToggle");
+      const savedTheme = localStorage.getItem("theme") || "light";
+
+      function setTheme(theme) {
+        root.setAttribute("data-bs-theme", theme);
+        localStorage.setItem("theme", theme);
+        button.textContent = theme === "dark" ? "Light theme" : "Dark theme";
+        button.setAttribute("aria-pressed", String(theme === "dark"));
+      }
+
+      setTheme(savedTheme);
+
+      button.addEventListener("click", () => {
+        const current = root.getAttribute("data-bs-theme");
+        setTheme(current === "dark" ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>

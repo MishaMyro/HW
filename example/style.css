@@ -1,0 +1,30 @@
+body {
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 0.75rem;
+}
+
+.formula {
+  background: var(--bs-tertiary-bg);
+  font-weight: 700;
+}
+
+.blank {
+  display: inline-block;
+  min-width: 4rem;
+  border-bottom: 1px solid currentColor;
+}
+
+.answers {
+  margin-top: 0.35rem;
+  color: var(--bs-secondary-color);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .display-6 {
+    font-size: 2rem;
+  }
+}

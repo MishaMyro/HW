@@ -12,10 +12,7 @@ It can be copied or pushed to any repository that publishes GitHub Pages from th
 │       └── english-homework-manager.toml
 ├── index.html
 ├── style.css
-├── english-homework/
-│   ├── index.html
-│   └── style.css
-└── simple-static/
+└── example/
     ├── index.html
     └── style.css
 ```
@@ -50,3 +47,22 @@ https://<username>.github.io/<repository>/unit-2-test/
 ## Agent
 
 Use the project agent `english-homework-manager` when asking Codex to create, edit, publish, delete, or list homework/test pages in a repository using this structure.
+
+## Bootstrap Prompt for Another Agent
+
+Give this prompt to another coding agent when you want it to create a new repository with the same structure and behavior:
+
+```text
+Create a new GitHub Pages repository based on this template:
+https://github.com/MishaMyro/HW
+
+Recreate the project structure, catalog page, project-local Codex agent, Bootstrap-based responsive example page, numeric catalog IDs, and GitHub Pages publishing setup.
+
+Important:
+- The new repository must be portable and must not keep repository-specific references to MishaMyro/HW except as source attribution if needed.
+- The new README must describe the copied project as a reusable template.
+- The new README must not include this bootstrap prompt section.
+- Use relative links for page folders.
+- Configure GitHub Pages to publish from the main branch root.
+- Push the completed project and verify the live GitHub Pages URL.
+```
