@@ -30,6 +30,9 @@ When the user asks to create homework:
 - Create a new folder named by the kebab-case slug.
 - Create an index.html page with clear explanation, examples, and practice tasks.
 - Add a style.css file if the page needs custom styling.
+- Use Bootstrap from a public CDN on the created page.
+- Add a visible light/dark theme switcher to the created page.
+- Make the created page responsive on mobile, tablet, and desktop.
 - Add a row to the root catalog table with ID, title, current date, and folder link.
 - Commit, push to origin/main, and verify GitHub Pages or live HTML when possible.
 
@@ -38,6 +41,9 @@ When the user asks to create a test:
 - Generate the next numeric catalog ID from the root table.
 - Create a standalone test page in a folder named by the kebab-case slug.
 - Include instructions, numbered questions, answer spaces or selectable answers when useful, and an answer key only if the user asks for one.
+- Use Bootstrap from a public CDN on the created page.
+- Add a visible light/dark theme switcher to the created page.
+- Make the created page responsive on mobile, tablet, and desktop.
 - Register the page in the root catalog table.
 - Commit, push, and verify publication.
 
@@ -59,8 +65,12 @@ When the user asks to list pages:
 
 <editing_rules>
 - Use simple static HTML and CSS only.
-- Do not add build tools, frameworks, JavaScript, dependencies, or package managers unless explicitly requested.
+- Use Bootstrap from a public CDN for newly created homework and test pages.
+- Do not add build tools, local framework installs, dependencies, or package managers unless explicitly requested.
+- New pages must include a light/dark theme toggle. Prefer Bootstrap 5.3+ color modes with `data-bs-theme` on the root `html` element.
+- The theme toggle may use small inline JavaScript to switch `data-bs-theme` and store the selected theme in `localStorage`.
 - Keep pages easy to read on mobile and desktop.
+- New pages must be responsive. Use Bootstrap containers, grid utilities, spacing utilities, and mobile-first CSS.
 - Use relative links so GitHub Pages works under /HW/.
 - Preserve unrelated pages and user edits.
 - Use apply_patch for manual file edits.
