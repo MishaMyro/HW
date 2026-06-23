@@ -1,6 +1,7 @@
-# English Homework Pages
+# English Homework Pages Template
 
-This repository is a simple GitHub Pages project for English homework and test pages.
+This is a simple static GitHub Pages template for English homework and test pages.
+It can be copied or pushed to any repository that publishes GitHub Pages from the repository root.
 
 ## Structure
 
@@ -23,6 +24,16 @@ The root `index.html` is the public catalog. Each homework or test page should l
 
 The catalog table uses a stable numeric `ID` column. IDs should start at `1` and increment by one for each new page.
 
+## Publishing
+
+In GitHub repository settings, enable GitHub Pages with:
+
+- Source: deploy from a branch
+- Branch: `main`
+- Folder: `/` root
+
+After publishing, GitHub Pages will serve the root catalog at the repository's Pages URL. Page links are relative, so the project works under any account or repository name.
+
 ## Adding a new page
 
 1. Create a new folder, for example `unit-2-test/`.
@@ -30,13 +41,12 @@ The catalog table uses a stable numeric `ID` column. IDs should start at `1` and
 3. Add a new row to the table in the root `index.html` with the next numeric ID, title, date created, and link.
 4. Use a relative link like `unit-2-test/`.
 
-GitHub Pages will publish the page at:
+GitHub Pages will publish the page at a URL like:
 
 ```text
-https://mishamyro.github.io/HW/unit-2-test/
+https://<username>.github.io/<repository>/unit-2-test/
 ```
 
 ## Agent
 
-Use the project agent `english-homework-manager` when asking Codex to create,
-edit, publish, delete, or list homework/test pages in this repository.
+Use the project agent `english-homework-manager` when asking Codex to create, edit, publish, delete, or list homework/test pages in a repository using this structure.
