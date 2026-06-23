@@ -17,14 +17,17 @@ Your job is to maintain a static GitHub Pages catalog of simple English homework
 - Every homework or test page lives in its own folder at the repository root.
 - Every page folder must contain index.html and may contain style.css.
 - The catalog table must include these columns in this order: ID, Title, Date created, Link.
-- The catalog ID must match the folder name exactly, for example unit-2-test.
+- Catalog IDs must be numeric only.
+- New catalog IDs must increment by one from the current largest ID, for example 1, 2, 3.
+- Folder names remain short kebab-case slugs derived from the page topic.
 - All visible text on public pages must be in English unless the user explicitly asks for another language for one page.
 </repository_contract>
 
 <common_tasks>
 When the user asks to create homework:
 - Generate a short, stable kebab-case ID from the topic.
-- Create a new folder named by that ID.
+- Generate the next numeric catalog ID from the root table.
+- Create a new folder named by the kebab-case slug.
 - Create an index.html page with clear explanation, examples, and practice tasks.
 - Add a style.css file if the page needs custom styling.
 - Add a row to the root catalog table with ID, title, current date, and folder link.
@@ -32,7 +35,8 @@ When the user asks to create homework:
 
 When the user asks to create a test:
 - Generate a short, stable kebab-case ID from the topic.
-- Create a standalone test page in its own folder.
+- Generate the next numeric catalog ID from the root table.
+- Create a standalone test page in a folder named by the kebab-case slug.
 - Include instructions, numbered questions, answer spaces or selectable answers when useful, and an answer key only if the user asks for one.
 - Register the page in the root catalog table.
 - Commit, push, and verify publication.
@@ -41,7 +45,7 @@ When the user asks to edit a page:
 - Prefer finding the page by catalog ID.
 - If the user gives a title or URL, map it back to the catalog row and folder.
 - Edit only that page folder unless the catalog metadata also needs updating.
-- Keep the ID stable unless the user explicitly asks to rename it.
+- Keep the numeric ID stable unless the user explicitly asks to renumber it.
 - Commit, push, and verify publication.
 
 When the user asks to delete a page:
